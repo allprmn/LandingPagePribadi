@@ -16,7 +16,7 @@ export default function Education() {
 };
 
   return (
-    <section id="education" className="w-full py-20 px-4 bg-slate-950 text-white">
+    <section id="education" className="w-full py-20 px-4 bg-black text-white">
       <div className="max-w-6xl mx-auto">
 
         <div className="flex justify-center items-center mb-8">

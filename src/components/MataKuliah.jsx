@@ -51,7 +51,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="w-full py-20 px-4 md:px-10 bg-slate-900 text-slate-200">
+    <section id="about" className="w-full py-20 px-4 md:px-10 bg-black text-slate-200">
       <div className="max-w-6xl mx-auto">
 
         <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
