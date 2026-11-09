@@ -109,7 +109,7 @@ git clone https://github.com/allprmn/tugas-kuliah.git
     pertemuan: "Pertemuan 2",
     deskripsiSingkat: "Membuat halaman profil diri menggunakan HTML5, struktur semantik, dan metadata.",
     linkApp: "https://aldipramana.my.id/profil",
-    linkRepo: "https://github.com/allprmn/cvtes", 
+    linkRepo: "https://github.com/allprmn/LandingPagePribadi", 
     screenshots: [
       {
         id: "ss-p2-1",
