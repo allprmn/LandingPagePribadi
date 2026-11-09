@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Plasma from '../components/Plasma';
-import About from '../components/MataKuliah';
+import Magnet from '../components/ui/Magnet';
 
 export default function Home() {
   return (
@@ -65,13 +65,25 @@ export default function Home() {
         </h1>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-4">
-          <Link to="#projects" className="bg-white text-black font-semibold px-8 py-3 rounded-xl hover:bg-gray-200 transition-colors">
-            Lihat Proyek
-          </Link>
-          <Link to="#about" className="bg-white/5 text-white font-semibold px-8 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-            Pelajari Lebih Lanjut
-          </Link>
+        <div className="flex flex-col sm:flex-row gap-6 mt-8">
+          <Magnet padding={80} magnetStrength={3}>
+            <Link 
+              to="/tugas" 
+              className="inline-block bg-white text-black font-semibold px-8 py-3 rounded-xl hover:bg-gray-200 transition-colors"
+            >
+              Lihat Tugas
+            </Link>
+          </Magnet>
+
+          {/* Tombol Pelajari Lebih Lanjut */}
+          <Magnet padding={80} magnetStrength={3}>
+            <Link 
+              to="#about" 
+              className="inline-block bg-white/5 text-white font-semibold px-8 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
+            >
+              Pelajari Lebih Lanjut
+            </Link>
+          </Magnet>
         </div>
       </main>
     </div>
