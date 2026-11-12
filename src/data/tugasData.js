@@ -43,6 +43,27 @@ export const daftarTugas = [
         height: 846,
         title: "Commit & Push"
       },
+      {
+        id: "ss-6",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas1.png",
+        width: 1917,
+        height: 954,
+        title: "Dahboard"
+      },
+      {
+        id: "ss-7",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas2.png",
+        width: 1893,
+        height: 955,
+        title: "MataKuliah"
+      },
+      {
+        id: "ss-8",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas3.png",
+        width: 1902,
+        height: 967,
+        title: "Kalender"
+      },
     ],
     markdownContent: `
 # Aplikasi Manajemen Tugas Kuliah
@@ -114,9 +135,25 @@ git clone https://github.com/allprmn/tugas-kuliah.git
       {
         id: "ss-p2-1",
         // GANTI DENGAN URL SUPABASE KAMU
-        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/profil.png", 
-        width: 1906,
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/profil1.png", 
+        width: 1891,
         height: 945,
+        title: "Tampilan Halaman Profil"
+      },
+      {
+        id: "ss-p2-2",
+        // GANTI DENGAN URL SUPABASE KAMU
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Profil2.png", 
+        width: 1881,
+        height: 919,
+        title: "Tampilan Halaman Profil"
+      },
+      {
+        id: "ss-p2-3",
+        // GANTI DENGAN URL SUPABASE KAMU
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/profil3.png", 
+        width: 1899,
+        height: 943,
         title: "Tampilan Halaman Profil"
       }
     ],
