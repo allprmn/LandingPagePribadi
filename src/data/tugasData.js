@@ -1,6 +1,82 @@
 export const daftarTugas = [
-  {
+{
     id: "1",
+    judul: "Membuat Halaman Profil Diri dengan HTML5",
+    mataKuliah: "Profil Diri",
+    pertemuan: "Pertemuan 2",
+    deskripsiSingkat: "Membuat halaman profil diri menggunakan HTML5, struktur semantik, dan metadata.",
+    linkApp: "https://aldipramana.my.id/profil",
+    linkRepo: "https://github.com/allprmn/LandingPagePribadi",
+    screenshots: [
+      {
+        id: "ss-p2-1",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/profil1.png",
+        width: 1891,
+        height: 945,
+        title: "Tampilan Halaman Profil"
+      },
+      {
+        id: "ss-p2-2",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Profil2.png",
+        width: 1881,
+        height: 919,
+        title: "Tampilan Halaman Profil"
+      },
+      {
+        id: "ss-p2-3",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/profil3.png",
+        width: 1899,
+        height: 943,
+        title: "Tampilan Halaman Profil"
+      }
+    ],
+    markdownContent: `
+# Halaman Profil Diri dengan HTML5
+
+Tugas ini berfokus pada pembuatan halaman profil diri yang dibangun menggunakan struktur **HTML5** yang benar dan ramah aksesibilitas. Halaman ini di-*render* menggunakan React, namun menghasilkan *output* HTML5 murni di browser.
+
+## Ketentuan yang Dipenuhi
+
+### 1. Struktur HTML5 yang Benar
+Halaman menggunakan struktur dasar HTML5 yang mencakup:
+*   \`<!DOCTYPE html>\`
+*   \`<html>\`, \`<head>\`, dan \`<body>\`
+
+### 2. Elemen Semantik
+Kami menggunakan tag semantik agar struktur halaman mudah dibaca oleh *screen reader* dan mesin pencari (SEO):
+*   **\`<header>\`**: Bagian atas halaman yang berisi navigasi utama (Navbar).
+*   **\`<nav>\`**: Menu navigasi untuk berpindah antar halaman.
+*   **\`<main>\`**: Pembungkus konten utama halaman.
+*   **\`<section>\`**: Memisahkan bagian-bagian seperti *Hero*, *About*, dan *Projects*.
+*   **\`<footer>\`**: Bagian bawah halaman yang berisi informasi hak cipta dan kontak.
+
+### 3. Biodata & Foto Diri
+*   Terdapat foto profil yang diimplementasikan dengan tag \`<img>\` dan dilengkapi dengan atribut **\`alt\`** untuk aksesibilitas (contoh: \`alt="Foto Aldi Pramana"\`).
+*   Terdapat biodata singkat dan deskripsi pengalaman.
+
+### 4. Heading (h1, h2, h3)
+*   **\`<h1>\`**: Digunakan untuk nama utama di bagian *Hero*.
+*   **\`<h2>\`**: Digunakan untuk judul section seperti "Tentang Saya" dan "Riwayat Pendidikan".
+*   **\`<h3>\`**: Digunakan untuk sub-judul (misal: judul mata kuliah atau proyek).
+
+### 5. Tabel Mata Kuliah
+*   Terdapat tabel (\`<table>\`) jadwal mata kuliah semester ini yang mencakup kolom No, Matakuliah, Kelas, SKS, Ruang, Hari, Waktu, dan Dosen.
+
+### 6. Link
+*   Terdapat tautan ke media sosial (LinkedIn, Instagram) dan tautan navigasi di dalam halaman.
+
+### 7. Metadata (SEO & Open Graph)
+Pada file \`index.html\`, bagian \`<head>\` telah dilengkapi dengan metadata berikut:
+*   \`<title>\` : Judul halaman portofolio.
+*   \`<meta name="description">\` : Deskripsi singkat portofolio.
+*   \`<meta property="og:title">\` : Judul untuk *preview* di media sosial.
+*   \`<meta property="og:description">\` : Deskripsi untuk *preview*.
+*   \`<meta property="og:image">\` : URL gambar untuk *preview*.
+    `
+  },
+
+  {
+    id: "2",
     judul: "Aplikasi mengelola daftar tugas kuliah",
     mataKuliah: "Git, npm, TypeScript, dan Vite",
     pertemuan: "Pertemuan 6",
@@ -123,85 +199,167 @@ git clone https://github.com/allprmn/tugas-kuliah.git
 \`\`\`
     `
   },
-{
-    id: "2",
-    judul: "Membuat Halaman Profil Diri dengan HTML5",
-    mataKuliah: "Profil Diri",
-    pertemuan: "Pertemuan 2",
-    deskripsiSingkat: "Membuat halaman profil diri menggunakan HTML5, struktur semantik, dan metadata.",
-    linkApp: "https://aldipramana.my.id/profil",
-    linkRepo: "https://github.com/allprmn/LandingPagePribadi", 
+
+  {
+    id: "3",
+    judul: "Aplikasi Daftar Kegiatan",
+    mataKuliah: "Component-Based UI Development with React",
+    pertemuan: "Pertemuan 7",
+    deskripsiSingkat: "Aplikasi web sederhana menggunakan React dengan menerapkan konsep Component-Based UI Development.",
+    linkApp: "https://jadwalku.aldipramana.my.id",
+    linkRepo: "https://github.com/allprmn/jadwalku",
+
+
     screenshots: [
       {
-        id: "ss-p2-1",
-        // GANTI DENGAN URL SUPABASE KAMU
-        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/profil1.png", 
-        width: 1891,
-        height: 945,
-        title: "Tampilan Halaman Profil"
+        id: "jd-1",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Pert6-1.png",
+        width: 1914,
+        height: 963,
+        title: "Dashboard"
       },
       {
-        id: "ss-p2-2",
-        // GANTI DENGAN URL SUPABASE KAMU
-        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Profil2.png", 
-        width: 1881,
-        height: 919,
-        title: "Tampilan Halaman Profil"
+        id: "jd-2",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Pert6-2.png",
+        width: 1918,
+        height: 954,
+        title: "Calender"
       },
       {
-        id: "ss-p2-3",
-        // GANTI DENGAN URL SUPABASE KAMU
-        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/profil3.png", 
-        width: 1899,
-        height: 943,
-        title: "Tampilan Halaman Profil"
-      }
+        id: "jd-3",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Pert6-3.png",
+        width: 1918,
+        height: 918,
+        title: "Sidebar & Caleneder"
+      },
     ],
-    markdownContent: `
-# Halaman Profil Diri dengan HTML5
 
-Tugas ini berfokus pada pembuatan halaman profil diri yang dibangun menggunakan struktur **HTML5** yang benar dan ramah aksesibilitas. Halaman ini di-*render* menggunakan React, namun menghasilkan *output* HTML5 murni di browser.
 
-## Ketentuan yang Dipenuhi
+    markdownContent: `# JadwalKu — Aplikasi Manajemen Jadwal & Kegiatan
+**Nama:** Aldi Pramana
 
-### 1. Struktur HTML5 yang Benar
-Halaman menggunakan struktur dasar HTML5 yang mencakup:
-*   \`<!DOCTYPE html>\`
-*   \`<html>\`, \`<head>\`, dan \`<body>\`
+**NIM:** 1247050031
 
-### 2. Elemen Semantik
-Kami menggunakan tag semantik agar struktur halaman mudah dibaca oleh *screen reader* dan mesin pencari (SEO):
-*   **\`<header>\`**: Bagian atas halaman yang berisi navigasi utama (Navbar).
-*   **\`<nav>\`**: Menu navigasi untuk berpindah antar halaman.
-*   **\`<main>\`**: Pembungkus konten utama halaman.
-*   **\`<section>\`**: Memisahkan bagian-bagian seperti *Hero*, *About*, dan *Projects*.
-*   **\`<footer>\`**: Bagian bawah halaman yang berisi informasi hak cipta dan kontak.
+**Mata Kuliah:** Pengembangan Aplikasi Web
 
-### 3. Biodata & Foto Diri
-*   Terdapat foto profil yang diimplementasikan dengan tag \`<img>\` dan dilengkapi dengan atribut **\`alt\`** untuk aksesibilitas (contoh: \`alt="Foto Aldi Pramana"\`).
-*   Terdapat biodata singkat dan deskripsi pengalaman.
+**Tugas:** Component-Based UI Development with React
 
-### 4. Heading (h1, h2, h3)
-*   **\`<h1>\`**: Digunakan untuk nama utama di bagian *Hero*.
-*   **\`<h2>\`**: Digunakan untuk judul section seperti "Tentang Saya" dan "Riwayat Pendidikan".
-*   **\`<h3>\`**: Digunakan untuk sub-judul (misal: judul mata kuliah atau proyek).
+## Deskripsi Proyek
+**JadwalKu** adalah aplikasi web *full-stack* berbasis React yang dirancang untuk membantu mahasiswa mengelola jadwal kegiatan sehari-hari dan memantau *deadline* tugas kuliah dalam satu *dashboard* terpusat. Aplikasi ini mengusung tema *dark mode* (hitam pekat) dengan antarmuka yang modern, bersih, dan responsif.
 
-### 5. Tabel Mata Kuliah
-*   Terdapat tabel (\`<table>\`) jadwal mata kuliah semester ini yang mencakup kolom No, Matakuliah, Kelas, SKS, Ruang, Hari, Waktu, dan Dosen.
+Aplikasi ini terintegrasi dengan **Supabase (PostgreSQL)** sebagai *backend*, sehingga data tidak hanya tersimpan di *local storage*, melainkan tersinkronisasi secara *real-time* di database.
 
-### 6. Link
-*   Terdapat tautan ke media sosial (LinkedIn, Instagram) dan tautan navigasi di dalam halaman.
+## Teknologi yang Digunakan
+- **React.js (Vite):** *Library* utama untuk membangun antarmuka.
+- **Tailwind CSS v3:** *Framework* CSS untuk *styling* yang responsif dan konsisten.
+- **React Router DOM v7:** Untuk navigasi antar halaman (*Single Page Application*).
+- **Supabase:** *Backend as a Service* (Database PostgreSQL) untuk menyimpan data kegiatan.
+- **Framer Motion & Lucide React:** Untuk animasi interaktif dan ikon antarmuka.
+- **date-fns:** Untuk manipulasi dan format tanggal.
 
-### 7. Metadata (SEO & Open Graph)
-Pada file \`index.html\`, bagian \`<head>\` telah dilengkapi dengan metadata berikut:
-*   \`<title>\` : Judul halaman portofolio.
-*   \`<meta name="description">\` : Deskripsi singkat portofolio.
-*   \`<meta property="og:title">\` : Judul untuk *preview* di media sosial.
-*   \`<meta property="og:description">\` : Deskripsi untuk *preview*.
-*   \`<meta property="og:image">\` : URL gambar untuk *preview*.
+---
+
+## Penerapan Konsep React (Sesuai Ketentuan Tugas)
+
+### 1. Components (Komponen)
+Aplikasi ini dipecah menjadi banyak komponen kecil yang terpisah ke dalam file masing-masing, mencakup lebih dari 15 komponen. 
+- **Layout Components:** \`Sidebar.jsx\`, \`Header.jsx\`, \`Layout.jsx\`
+- **UI Reusable Components:** \`Button.jsx\`, \`Modal.jsx\`, \`Badge.jsx\`, \`EmptyState.jsx\`, \`PageHeader.jsx\`, \`SwipeRow.jsx\`
+- **Feature Components:** \`ActivityCard.jsx\`, \`ActivityGrid.jsx\`, \`ActivityForm.jsx\`, \`FilterBar.jsx\`, \`StatCards.jsx\`, \`CalendarGrid.jsx\`, \`DayDetail.jsx\`.
+
+### 2. Props (Properti)
+Props digunakan untuk mengirim data dari komponen *Parent* (induk) ke komponen *Child* (anak).
+- **Contoh:** Komponen \`ActivityGrid\` menerima *props* \`activities\` (array data), \`onEdit\`, \`onDelete\`, dan \`onToggle\` dari halaman \`Dashboard.jsx\`. Data tersebut kemudian dilempar lagi ke \`ActivityCard\` untuk dirender.
+- **Contoh Reusable:** Komponen \`Button\` menerima *props* \`variant\` (primary, ghost, danger) dan \`size\` untuk mengubah tampilannya secara dinamis di berbagai halaman.
+
+### 3. State (useState & Context)
+State digunakan untuk mengelola data yang dapat berubah selama aplikasi berjalan.
+- **Local State (\`useState\`):** Digunakan di \`ActivityForm.jsx\` untuk menyimpan ketikan user pada form (judul, tanggal, jam). Digunakan juga di \`Header.jsx\` untuk melacak status buka/tutup menu *mobile*.
+- **Global State (\`useContext\`):** Dibuat file \`ActivitiesContext.jsx\` untuk menyimpan data kegiatan dari Supabase. Ini memungkinkan halaman Dashboard, Kalender, dan Statistik mengakses data yang sama tanpa harus *passing props* secara berlebihan (*prop drilling*).
+
+### 4. Event Handling
+Event handling menangani interaksi pengguna seperti klik, input, dan submit.
+- **Contoh:** Fungsi \`handleSubmit\` pada \`ActivityForm\` yang dipicu saat user menekan tombol "Tambah Kegiatan". Fungsi \`onChange\` pada input form untuk memperbarui state secara *real-time* saat user mengetik.
+
+### 5. Conditional Rendering
+Menampilkan konten berdasarkan kondisi tertentu.
+- **Contoh:** Jika data kegiatan kosong (\`activities.length === 0\`), maka komponen \`<EmptyState />\` yang akan dirender, bukan list kegiatan.
+- **Contoh:** Tombol "Edit" dan "Hapus" disembunyikan dan diganti dengan ikon Gembok 🔒 jika data tersebut berasal dari tabel \`tasks\` (data eksternal), sehingga mencegah *error* pengeditan.
+
+### 6. List Rendering
+Menampilkan data array menggunakan method \`.map()\` dan memberikan \`key\` unik pada setiap elemen.
+- **Contoh:** Merender daftar kegiatan di Dashboard, daftar tanggal di Kalender (\`CalendarGrid\`), dan daftar notifikasi di halaman Notifikasi.
+
+---
+
+## Fitur-Fitur Interaktif (Sesuai Ketentuan Tugas)
+
+Aplikasi ini memiliki lebih dari 3 fitur interaktif yang berjalan penuh:
+
+1. **Dashboard Terintegrasi (CRUD Penuh)**
+   - **Menambahkan data:** Form interaktif dengan *popup modal* untuk membuat jadwal baru.
+   - **Mengedit data:** Mengubah judul, tanggal, jam, atau deskripsi kegiatan yang sudah ada.
+   - **Menghapus data:** Menghapus kegiatan dengan konfirmasi *pop-up*.
+   - **Mengubah status:** Tombol *Toggle* untuk menandai kegiatan "Selesai" atau "Belum Selesai".
+2. **Pencarian & Filter Real-time**
+   - **Search Bar di Header:** Mencari kegiatan berdasarkan judul secara instan. Pencarian ini tersinkronisasi di seluruh halaman (Dashboard & Daftar Kegiatan).
+   - **Filter:** Menyaring daftar berdasarkan Kategori (Kuliah, Tugas, Organisasi, Pribadi) dan Status (Selesai/Belum).
+3. **Kalender Interaktif (Sinkronisasi Data)**
+   - Menampilkan kalender bulanan. Tanggal yang memiliki kegiatan akan ditandai dengan **titik putih (dot)**.
+   - Jika tanggal diklik, panel di sebelah kanan akan menampilkan detail kegiatan pada hari tersebut.
+   - Terintegrasi dengan data *deadline* tugas dari aplikasi eksternal (Pertemuan 6).
+4. **Notifikasi & Swipe-to-Delete**
+   - Mendeteksi tugas yang *deadline*-nya hari ini.
+   - Menggunakan komponen \`SwipeRow\` (berbasis *Framer Motion*) yang memungkinkan pengguna menggeser kartu ke kiri untuk menghapus notifikasi (khusus di tampilan, data asli tetap aman).
+   - Mendukung **Web Notification API** (notifikasi *pop-up* langsung ke layar laptop/HP jika diizinkan).
+5. **Statistik Visual**
+   - Menampilkan grafik batang (*progress bar*) persentase tugas yang sudah diselesaikan.
+   - Rekap jumlah tugas per kategori (Kuliah, Tugas, Organisasi, Pribadi).
+
+---
+
+## Cara Menjalankan Proyek (Local Development)
+
+1. *Clone repository* ini: 
+   \`\`\`bash
+   git clone https://github.com/allprmn/jadwalku.git
+   \`\`\`
+2. Masuk ke folder: 
+   \`\`\`bash
+   cd jadwalku
+   \`\`\`
+3. Install *dependency*: 
+   \`\`\`bash
+   npm install
+   \`\`\`
+4. Buat file \`.env\` di *root folder* dan tambahkan kredensial Supabase:
+   \`\`\`env
+   VITE_SUPABASE_URL=url_supabase_kamu
+   VITE_SUPABASE_ANON_KEY=anon_key_kamu
+   \`\`\`
+5. Jalankan *development server*:
+   \`\`\`bash
+   npm run dev
+   \`\`\`
+6. Buka \`http://localhost:5173\` di browser.
     `
   },
 
+ {
+    id: "4",
+    judul: "Aplikasi web interaktif menggunakan React yang mengambil dan menampilkan data dari API.",
+    mataKuliah: "React Routing, State Management, Data Fetching, dan Application Architecture",
+    pertemuan: "Pertemuan 8",
+    deskripsiSingkat: "Deskripsi singkat tugas...",
+    linkApp: "https:/my.aldipramana.my.id",
+    linkRepo: "https://github.com/username/repo-baru",
+    screenshots: [
+      // Gambar screenshot dari Supabase atau URL
+    ],
+    markdownContent: `
+# Penjelasan Tugas Pertemuan 8
+    `
+  }
 
 
   // Kamu bisa menambah tugas baru di sini
