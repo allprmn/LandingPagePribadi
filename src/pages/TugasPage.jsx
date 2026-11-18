@@ -28,7 +28,7 @@ const itemVariants = {
 };
 
 export default function TugasPage() {
-  const navigate = useNavigate(); // Gunakan navigate untuk pindah halaman internal
+  const navigate = useNavigate();
 
   const handleItemClick = (item) => {
     if (!item || !item.data) return;
@@ -39,9 +39,9 @@ export default function TugasPage() {
     } else if (item.action === 'repo') {
       window.open(tugas.linkRepo, '_blank');
     } else if (item.action === 'screenshot') {
-      navigate(`/tugas/${tugas.id}/screenshot`); // Pindah ke halaman screenshot
+      navigate(`/tugas/${tugas.id}/screenshot`); 
     } else if (item.action === 'detail') {
-      navigate(`/tugas/${tugas.id}/detail`); // Pindah ke halaman detail
+      navigate(`/tugas/${tugas.id}/detail`); 
     }
   };
 
@@ -93,6 +93,7 @@ export default function TugasPage() {
                   theme="dark"
                   peek
                   zoomOnClick
+                  intro={false}
                 />
               </div>
               

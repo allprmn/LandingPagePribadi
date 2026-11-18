@@ -121,23 +121,23 @@ Pada file \`index.html\`, bagian \`<head>\` telah dilengkapi dengan metadata ber
       },
       {
         id: "ss-6",
-        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas1.png",
-        width: 1917,
-        height: 954,
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas11.png",
+        width: 1896,
+        height: 951,
         title: "Dahboard"
       },
       {
         id: "ss-7",
-        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas2.png",
-        width: 1893,
-        height: 955,
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas22.png",
+        width: 1890,
+        height: 942,
         title: "MataKuliah"
       },
       {
         id: "ss-8",
-        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas3.png",
-        width: 1902,
-        height: 967,
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/Tugas33.png",
+        width: 1897,
+        height: 951,
         title: "Kalender"
       },
     ],

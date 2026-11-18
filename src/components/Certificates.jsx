@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ChromaGrid from './ui/ChromaGrid';
-import { certificates } from '../data';
+import { certificates } from '../data/data';
 import BlurText from "./BlurText";
 
 export default function Certificates() {

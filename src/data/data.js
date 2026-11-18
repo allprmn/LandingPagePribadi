@@ -1,7 +1,7 @@
-import imgSD from './assets/educations/sd.jpg';
-import imgSMP from './assets/educations/smp.jpg';
-import imgMAN from './assets/educations/man.jpg';
-import imgUIN from './assets/educations/uin.jpg';
+import imgSD from '../assets/educations/sd.jpg';
+import imgSMP from '../assets/educations/smp.jpg';
+import imgMAN from '../assets/educations/man.jpg';
+import imgUIN from '../assets/educations/uin.jpg';
 
 
 // data riwayat pendidikan
@@ -42,9 +42,9 @@ export const education = [
 
 
 // Certifikat
-import cert1 from './assets/certificates/cert-1.jpg';
-import cert2 from './assets/certificates/cert-2.jpg';
-import cert3 from './assets/certificates/cert-3.jpg';
+import cert1 from '../assets/certificates/cert-1.jpg';
+import cert2 from '../assets/certificates/cert-2.jpg';
+import cert3 from '../assets/certificates/cert-3.jpg';
 
 export const certificates = [
   {

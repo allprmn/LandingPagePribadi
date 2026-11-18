@@ -1,92 +1,199 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Plasma from '../components/Plasma';
-import Magnet from '../components/ui/Magnet';
+import React, { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
+
+import image from '../assets/logo.png';
+import imgPerson from '../assets/img-person.png';
+import mountain from '../assets/mountain.png';
+import mountainRemovebg from '../assets/mountain-removebg.png';
+import line1 from '../assets/line-1.svg';
+import line2 from '../assets/line-2.svg';
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const shortcuts = [
+    {
+      label: "GitHub",
+      href: "https://github.com/allprmn",
+      icon: (
+        <svg className="w-[18px] h-[18px] text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+        </svg>
+      ),
+    },
+    {
+      label: "Instagram",
+      href: "https://instagram.com/all_prmn14",
+      icon: (
+        <svg className="w-[18px] h-[18px] text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" strokeLinecap="round" strokeLinejoin="round" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/aldi-pramana-732828430/",
+      icon: (
+        <svg className="w-[18px] h-[18px] text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+          <rect width="4" height="12" x="2" y="9" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="4" cy="4" r="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+  ];
+
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+
+  // 1. Gunung: Hanya Zoom In, TANPA pergerakan Y agar tidak hilang
+  const scaleMountain = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+
+  // 2. Teks: Zoom In besar, bergerak ke atas sedikit, dan memudar
+  const scaleText = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
+  const yText = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  // 3. Orang: Zoom In dan turun sedikit agar kakinya tetap terlihat
+  const scalePerson = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
+  const yPerson = useTransform(scrollYProgress, [0, 1], [0, 50]);
+
   return (
-    
-    <div className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col font-sans">
-      
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
-        <Plasma 
-          color="#B497CF"
-          speed={1}
-          direction="forward"
-          scale={1}
-          opacity={1}
-          mouseInteractive={false}
-          renderScale={0.55}
-          maxDpr={1.5}
-          targetFps={60}
-          iterations={60}
-        />
-      </div>
+    <div className="relative w-full bg-black font-sans overflow-hidden">
 
-      {/* ================= NAVBAR (Custom untuk halaman ini) ================= */}
-      <header className="relative z-10 w-full flex justify-center pt-6 px-4">
-        <nav className="flex items-center justify-between w-full max-w-5xl bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-6 py-3">
-          {/* Logo */}
-          <div className="flex items-center gap-2 text-white font-semibold">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-              <path d="M2 12h20"></path>
-            </svg>
+      <section
+        ref={heroRef}
+        className="relative w-full h-[100dvh] bg-black flex items-center justify-center p-2 md:p-4 z-10"
+      >
+        <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black">
+
+          <motion.img
+            style={{ scale: scaleMountain }}
+            className="absolute top-0 left-0 w-full h-full object-cover origin-center"
+            src={mountain}
+          />
+          <motion.img
+            style={{ scale: scaleMountain }}
+            className="absolute top-0 left-0 w-full h-full object-cover origin-center"
+            src={mountainRemovebg}
+          />
+          <motion.h1
+            style={{ y: yText, opacity: opacityText, scale: scaleText }}
+            className="absolute top-[25%] left-0 w-full text-center font-black text-white text-[15vw] tracking-tighter z-10 origin-center"
+          >
             Aldi Pramana
+          </motion.h1>
+
+          <motion.img
+            style={{ y: yPerson, scale: scalePerson }}
+            className="absolute top-0 left-0 w-full h-full object-cover z-20 pointer-events-none origin-bottom"
+            src={imgPerson}
+          />
+
+          <header className="absolute top-6 left-0 w-full z-50 px-6 md:px-12 flex justify-between items-center">
+            <div className="relative z-10 flex items-center gap-2.5">
+              <button
+                type="button"
+                aria-expanded={menuOpen}
+                className={`w-[43px] h-[43px] shrink-0 flex flex-col gap-[6px] bg-white rounded-full items-center justify-center hover:bg-gray-200 transition-all duration-300 cursor-pointer ${menuOpen ? "rotate-90" : "rotate-0"
+                  }`}
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <img className="w-[18px] h-px" src={line1} alt="" />
+                <img className="w-[18px] h-px" src={line2} alt="" />
+              </button>
+
+              <div
+                className={`flex items-center gap-2 py-1 transition-all duration-300 ${menuOpen ? "max-w-[200px] opacity-100" : "max-w-0 opacity-0 overflow-hidden pointer-events-none"
+                  }`}
+              >
+                {shortcuts.map((item, index) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={item.label}
+                    style={{ transitionDelay: menuOpen ? `${index * 60}ms` : "0ms" }}
+                    className={`w-[43px] h-[43px] shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-gray-200 hover:scale-105 transition-all duration-300 ${menuOpen ? "translate-x-0 scale-100 opacity-100" : "-translate-x-4 scale-75 opacity-0"
+                      }`}
+                  >
+                    {item.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="absolute left-1/2 -translate-x-1/2 h-[51px] w-[68px]">
+              <img className="w-full h-full object-contain" alt="Logo" src={image} />
+            </div>
+
+            <a
+              className="px-6 py-2.5 bg-white text-black font-medium text-sm rounded-full hover:bg-gray-200 transition-colors"
+              href="/Profil"
+            >
+              Profil
+            </a>
+          </header>
+        </div>
+      </section>
+
+      {/* ================= SECTION 2: READY TO BEGIN (FOOTER) ================= */}
+      <section className="relative z-30 bg-black w-full min-h-screen flex flex-col justify-between overflow-hidden border-t border-white/10">
+
+        {/* Konten Utama */}
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-20">
+
+          {/* Teks Raksasa di Belakang */}
+          <div className="absolute bottom-0 left-0 w-full flex justify-center overflow-hidden pointer-events-none">
+            <h1 className="text-[20vw] font-black text-white/5 leading-none tracking-tighter translate-y-[30%] select-none">
+              ALDI PRAMANA
+            </h1>
           </div>
 
-          {/* Links */}
-          <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-            <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-            <a href="#certificates" className="hover:text-white transition-colors">Certificates</a>
-          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-12 text-center relative z-20"
+          >
+            Kumpulan Semua Tugas
+          </motion.h2>
 
-          {/* Button */}
-          <Link to="/profil" className="bg-white text-black text-sm font-semibold px-5 py-2 rounded-full hover:bg-gray-200 transition-colors">
-            Profil
-          </Link>
-        </nav>
-      </header>
+          {/* Tombol Navigasi ke Tugas */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-4 mb-8 relative z-20"
+          >
+            <Link to="/tugas" className="flex items-center justify-center gap-3 px-8 py-4 bg-white text-black hover:bg-gray-200 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all hover:scale-105">
+              Lihat Semua Tugas
+            </Link>
+          </motion.div>
 
-      {/* ================= MAIN CONTENT ================= */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4">
-        
-        {/* Badge "NEW" */}
-        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full p-1 pr-4 mb-6">
-          <span className="bg-white text-black text-xs font-bold px-3 py-1 rounded-full">NEW</span>
-          <span className="text-gray-300 text-sm">Creative Portfolio</span>
         </div>
 
-        {/* Heading */}
-        <h1 className="text-5xl md:text-7xl font-bold text-white max-w-4xl leading-tight mb-6">
-          Welcome To My <br className="hidden md:block" /> Landing Page
-        </h1>
+        {/* Bottom Bar */}
+        <div className="relative z-20 w-full px-8 py-3 flex flex-col md:flex-row items-center justify-center border-t border-white/10 text-xs font-medium text-gray-500">
+          <p className="text-center">© 2026 ALDI PRAMANA. ALL RIGHTS RESERVED.</p>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 mt-8">
-          <Magnet padding={80} magnetStrength={3}>
-            <Link 
-              to="/tugas" 
-              className="inline-block bg-white text-black font-semibold px-8 py-3 rounded-xl hover:bg-gray-200 transition-colors"
-            >
-              Lihat Tugas
-            </Link>
-          </Magnet>
-
-          {/* Tombol Pelajari Lebih Lanjut */}
-          <Magnet padding={80} magnetStrength={3}>
-            <Link 
-              to="#about" 
-              className="inline-block bg-white/5 text-white font-semibold px-8 py-3 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
-            >
-              Pelajari Lebih Lanjut
-            </Link>
-          </Magnet>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="mt-3 md:mt-0 md:absolute md:right-8 w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+          </button>
         </div>
-      </main>
+      </section>
+
     </div>
-
   );
 }

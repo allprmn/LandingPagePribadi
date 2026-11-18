@@ -1,6 +1,6 @@
 import React from 'react';
 import AccordionGallery from './AccordionGallery'; // Sesuaikan path jika ada di folder 'ui'
-import { education } from '../data';
+import { education } from '../data/data';
 import BlurText from "./BlurText";
 
 export default function Education() {
