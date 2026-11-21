@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import image from '../assets/logo.png';
-import imgPerson from '../assets/img-person.png';
-import mountain from '../assets/mountain.png';
-import mountainRemovebg from '../assets/mountain-removebg.png';
+import image from '../assets/logo.webp';
+import imgPerson from '../assets/img-person.webp';
+import mountain from '../assets/mountain.webp';
+import mountainRemovebg from '../assets/mountain-removebg.webp';
 import line1 from '../assets/line-1.svg';
 import line2 from '../assets/line-2.svg';
 
@@ -52,18 +52,16 @@ export default function Home() {
     offset: ["start start", "end start"]
   });
 
-
-  // 1. Gunung: Hanya Zoom In, TANPA pergerakan Y agar tidak hilang
+  // --- ANIMASI SCROLL ---
   const scaleMountain = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
-
-  // 2. Teks: Zoom In besar, bergerak ke atas sedikit, dan memudar
   const scaleText = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
   const yText = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  // 3. Orang: Zoom In dan turun sedikit agar kakinya tetap terlihat
   const scalePerson = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
   const yPerson = useTransform(scrollYProgress, [0, 1], [0, 50]);
+
+  // Konfigurasi Animasi Masuk (Smooth & Ringan)
+  const entranceTransition = { duration: 1.2, ease: [0.16, 1, 0.3, 1] };
 
   return (
     <div className="relative w-full bg-black font-sans overflow-hidden">
@@ -74,30 +72,60 @@ export default function Home() {
       >
         <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black">
 
-          <motion.img
-            style={{ scale: scaleMountain }}
-            className="absolute top-0 left-0 w-full h-full object-cover origin-center"
-            src={mountain}
-          />
-          <motion.img
-            style={{ scale: scaleMountain }}
-            className="absolute top-0 left-0 w-full h-full object-cover origin-center"
-            src={mountainRemovebg}
-          />
-          <motion.h1
-            style={{ y: yText, opacity: opacityText, scale: scaleText }}
-            className="absolute top-[25%] left-0 w-full text-center font-black text-white text-[15vw] tracking-tighter z-10 origin-center"
+          {/* 1. GUNUNG (Dari Bawah) */}
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            transition={{ ...entranceTransition, delay: 0 }}
+            className="absolute inset-0 z-0 will-change-transform"
           >
-            Aldi Pramana
-          </motion.h1>
+            <img
+              className="absolute top-0 left-0 w-full h-full object-cover origin-center"
+              src={mountain}
+            />
+            <motion.img
+              style={{ scale: scaleMountain }}
+              className="absolute top-0 left-0 w-full h-full object-cover origin-center"
+              src={mountainRemovebg}
+            />
+          </motion.div>
 
-          <motion.img
-            style={{ y: yPerson, scale: scalePerson }}
-            className="absolute top-0 left-0 w-full h-full object-cover z-20 pointer-events-none origin-bottom"
-            src={imgPerson}
-          />
+          {/* 2. TEKS (Dari Bawah - Menyusul) */}
+          <motion.div
+            initial={{ y: 150, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ...entranceTransition, delay: 0.2 }}
+            className="absolute top-[35%] left-0 w-full z-10 will-change-transform"
+          >
+            <motion.h1
+              style={{ y: yText, opacity: opacityText, scale: scaleText }}
+              className="text-center font-black text-white text-[14vw] tracking-tighter origin-center"
+            >
+              Aldi Pramana
+            </motion.h1>
+          </motion.div>
 
-          <header className="absolute top-6 left-0 w-full z-50 px-6 md:px-12 flex justify-between items-center">
+          {/* 3. ORANG (Dari Bawah - Menyusul) */}
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            transition={{ ...entranceTransition, delay: 0.4 }}
+            className="absolute inset-0 z-20 pointer-events-none will-change-transform"
+          >
+            <motion.img
+              style={{ y: yPerson, scale: scalePerson }}
+              className="absolute top-0 left-0 w-full h-full object-cover origin-bottom"
+              src={imgPerson}
+            />
+          </motion.div>
+
+          {/* 4. NAVBAR (Dari Bawah - Menyusul Terakhir) */}
+          <motion.header
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ...entranceTransition, delay: 0.6 }}
+            className="absolute top-6 left-0 w-full z-50 px-6 md:px-12 flex justify-between items-center will-change-transform"
+          >
             <div className="relative z-10 flex items-center gap-2.5">
               <button
                 type="button"
@@ -141,7 +169,7 @@ export default function Home() {
             >
               Profil
             </a>
-          </header>
+          </motion.header>
         </div>
       </section>
 

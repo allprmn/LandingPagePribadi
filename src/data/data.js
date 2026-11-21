@@ -42,9 +42,9 @@ export const education = [
 
 
 // Certifikat
-import cert1 from '../assets/certificates/cert-1.jpg';
-import cert2 from '../assets/certificates/cert-2.jpg';
-import cert3 from '../assets/certificates/cert-3.jpg';
+import cert1 from '../assets/certificates/cert-1.webp';
+import cert2 from '../assets/certificates/cert-2.webp';
+import cert3 from '../assets/certificates/cert-3.webp';
 
 export const certificates = [
   {

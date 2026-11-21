@@ -9,9 +9,9 @@ const items = [
     bgColor: "#1B1722",
     textColor: "#fff",
     links: [
-      { label: "Home", href: "/" },        // Mengarah ke halaman Home
-      { label: "Profil", href: "/profil" }, // Mengarah ke halaman Profil
-      { label: "Projects", href: "/#projects" }, // Contoh jika ingin kembali ke section
+      { label: "Home", href: "/" }, 
+      { label: "Profil", href: "/profil" }, 
+      { label: "Projects", href: "/#projects" },
     ]
   },
   {
@@ -28,9 +28,9 @@ const items = [
     bgColor: "#2F293A",
     textColor: "#fff",
     links: [
-      { label: "Email", ariaLabel: "Kirim Email", href: "mailto:aldipramanaaldi9@gmail.com" }, // GANTI
-      { label: "LinkedIn", ariaLabel: "LinkedIn", href: "https://www.linkedin.com/in/aldi-pramana-732828430/" }, // GANTI
-      { label: "Instagram", ariaLabel: "Instagram", href: "https://www.instagram.com/all_prmn14/" } // GANTI
+      { label: "Email", ariaLabel: "Kirim Email", href: "mailto:aldipramanaaldi9@gmail.com" },
+      { label: "LinkedIn", ariaLabel: "LinkedIn", href: "https://www.linkedin.com/in/aldi-pramana-732828430/" }, 
+      { label: "Instagram", ariaLabel: "Instagram", href: "https://www.instagram.com/all_prmn14/" }
     ]
   }
 ];
