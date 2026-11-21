@@ -351,7 +351,7 @@ Aplikasi ini memiliki lebih dari 3 fitur interaktif yang berjalan penuh:
     mataKuliah: "React Routing, State Management, Data Fetching, dan Application Architecture",
     pertemuan: "Pertemuan 8",
     deskripsiSingkat: "Aplikasi Web Monitoring IOT-Pemberi makan ikan otomatis",
-    linkApp: "https:/aquafeed.aldipramana.my.id",
+    linkApp: "https://aquafeed.aldipramana.my.id",
     linkRepo: "https://github.com/allprmn/aquafeed-c3",
     screenshots: [
       // Gambar screenshot dari Supabase atau URL
