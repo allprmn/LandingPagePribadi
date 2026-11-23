@@ -354,7 +354,41 @@ Aplikasi ini memiliki lebih dari 3 fitur interaktif yang berjalan penuh:
     linkApp: "https://aquafeed.aldipramana.my.id",
     linkRepo: "https://github.com/allprmn/aquafeed-c3",
     screenshots: [
-      // Gambar screenshot dari Supabase atau URL
+      {
+        id: "af-1",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/1.webp",
+        width: 1899,
+        height: 946,
+        title: "Dashboard"
+      },
+      {
+        id: "af-2",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/2.webp",
+        width: 1897,
+        height: 943,
+        title: "Dashboard"
+      },
+      {
+        id: "af-3",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/3.webp",
+        width: 1893,
+        height: 946,
+        title: "Riwayat"
+      },
+      {
+        id: "af-4",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/4.webp",
+        width: 1899,
+        height: 943,
+        title: "Manage"
+      },
+      {
+        id: "af-5",
+        img: "https://yztwtpqzhupwemfyvnvn.supabase.co/storage/v1/object/public/screenshots/5.webp",
+        width: 1899,
+        height: 943,
+        title: "Detail"
+      },
     ],
     markdownContent: `
 # Dokumentasi Arsitektur Aplikasi — AquaFeed C3
